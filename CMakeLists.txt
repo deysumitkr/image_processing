@@ -16,6 +16,7 @@ find_package(OpenCV REQUIRED)
 # Include OpenCV headers
 include_directories(${OpenCV_INCLUDE_DIRS})
 
+# ----------------------------------------------------
 # Add opencv executable
 add_executable(cv_hw src/main.cpp)
 
@@ -24,3 +25,23 @@ target_link_libraries(cv_hw ${OpenCV_LIBS})
 
 # Install target for the binary
 install(TARGETS cv_hw DESTINATION bin)
+
+# ----------------------------------------------------
+
+add_executable(video src/video.cpp)
+
+# Link OpenCV libraries to the executable
+target_link_libraries(video ${OpenCV_LIBS})
+
+# Install target for the binary
+install(TARGETS video DESTINATION bin)
+
+# ----------------------------------------------------
+
+add_executable(live_video src/liveVideo.cpp)
+
+# Link OpenCV libraries to the executable
+target_link_libraries(live_video ${OpenCV_LIBS})
+
+# Install target for the binary
+install(TARGETS live_video DESTINATION bin)
